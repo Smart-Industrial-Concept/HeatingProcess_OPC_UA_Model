@@ -1,0 +1,32 @@
+###########################
+# UaModeler Project File  #
+# Generated at 29.12.2020 #
+###########################
+
+PROJECTNAME = HeatingProcess
+
+TEMPLATESET = ($TEMPLATES)/net/v3_0/t0/net_server.tt2set
+
+MODELS += ($MODELS)/Opc.Ua.NodeSet2.ua \
+    heatingprocess.ua
+
+VARIABLES+= heatingprocess.ua: Namespace=SIC; Organization=TUWien; 
+
+COLORS = ($MODELS)/Opc.Ua.NodeSet2.ua: #0000ff\
+    heatingprocess.ua: #008000
+
+PROJECTVARIABLES += GenerateDefaultApplication = false \
+    NetFramework = 3.5 \
+    ProjectNamespace = SIC \
+    ProjectOrganization = TUWien
+
+OUTPUTPATH = ../UA Server/C++ServerExport
+
+GENERATE += heatingprocess.ua
+
+NODEACCESSINFOROLES += Administrator \
+    SecurityAdmin \
+    ConfigurationAdmin \
+    Operator \
+    Observer
+
